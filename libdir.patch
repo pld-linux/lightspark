@@ -1,0 +1,11 @@
+--- lightspark-0.4.4/CMakeLists.txt~	2010-08-29 16:50:40.000000000 +0200
++++ lightspark-0.4.4/CMakeLists.txt	2010-09-01 12:18:07.515834146 +0200
+@@ -94,7 +94,7 @@
+    SET(BINDIR "bin")
+    SET(DATADIR "share")
+    SET(LIBDIR "lib${LIB_SUFFIX}")
+-   SET(PRIVATELIBDIR "${LIBDIR}/lightspark")
++   SET(PRIVATELIBDIR "${LIB_INSTALL_DIR}/lightspark")
+ ENDIF ()
+ 
+ # Setting variables
