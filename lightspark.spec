@@ -17,6 +17,7 @@ BuildRequires:	curl-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	ftgl-devel
+BuildRequires:	gcc >= 6:4.4
 BuildRequires:	gettext
 BuildRequires:	glew-devel >= 1.5.4
 BuildRequires:	gtkglext-devel
