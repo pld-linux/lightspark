@@ -18,6 +18,7 @@ BuildRequires:	llvm-devel
 BuildRequires:	nasm
 BuildRequires:	pcre-cxx-devel
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.577
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,13 +38,12 @@ Browser plugin for rendering Flash content using Lightspark.
 %prep
 %setup -q
 %patch0 -p1
-mkdir objs
+
+install -d build
 
 %build
-cd objs
-cmake \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_BUILD_TYPE=Release \
+cd build
+%cmake \
 	-DCOMPILE_PLUGIN=1 \
 	-DLIB_INSTALL_DIR=%{_lib} \
 	-DPLUGIN_DIRECTORY=%{_browserpluginsdir} \
@@ -53,11 +53,8 @@ cmake \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-cd objs
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
-cd ..
 
 %find_lang %{name} --all-name
 
