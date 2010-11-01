@@ -1,11 +1,11 @@
 Summary:	Lightspark - a modern, free, open-source flash player implementation
 Name:		lightspark
-Version:	0.4.4
+Version:	0.4.4.3
 Release:	0.1
 License:	GPL v3
 Group:		X11/Applications/Multimedia
-Source0:	http://launchpad.net/lightspark/trunk/lightspark-0.4.4/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	6e063d3ee6a566c70cfff614b56fee25
+Source0:	http://edge.launchpad.net/lightspark/trunk/lightspark-0.4.4/+download/%{name}-%{version}.tar.gz
+# Source0-md5:	efd2e91d36ffa38c9befa25af5eaac20
 Patch0:		libdir.patch
 URL:		http://lightspark.sourceforge.net/
 BuildRequires:	SDL-devel
@@ -56,6 +56,7 @@ install -d build
 %build
 cd build
 %cmake \
+	-DAUDIO_BACKEND=pulse \
 	-DCOMPILE_PLUGIN=1 \
 	-DLIB_INSTALL_DIR=%{_lib} \
 	-DPLUGIN_DIRECTORY=%{_browserpluginsdir} \
