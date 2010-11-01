@@ -8,17 +8,28 @@ Source0:	http://launchpad.net/lightspark/trunk/lightspark-0.4.4/+download/%{name
 # Source0-md5:	6e063d3ee6a566c70cfff614b56fee25
 Patch0:		libdir.patch
 URL:		http://lightspark.sourceforge.net/
+BuildRequires:	SDL-devel
 BuildRequires:	autoconf >= 2.59-9
 BuildRequires:	automake
+BuildRequires:	boost-devel
+BuildRequires:	cmake
+BuildRequires:	curl-devel
 BuildRequires:	ffmpeg-devel
+BuildRequires:	fontconfig-devel
 BuildRequires:	ftgl-devel
-BuildRequires:	glew-devel
+BuildRequires:	gettext
+BuildRequires:	glew-devel >= 1.5.4
+BuildRequires:	gtkglext-devel
 BuildRequires:	libtool >= 2:1.5
-BuildRequires:	llvm-devel
+BuildRequires:	libxml++-devel
+BuildRequires:	llvm-devel >= 2.7
 BuildRequires:	nasm
 BuildRequires:	pcre-cxx-devel
+BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
+BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 1.577
+BuildRequires:	xulrunner-devel >= 1.9.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
