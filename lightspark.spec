@@ -31,8 +31,11 @@ BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel
 BuildRequires:	rpmbuild(macros) >= 1.583
-BuildRequires:	xulrunner-devel >= 1.9.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# Unresolved symbols found in: /usr/lib64/lightspark/liblightspark.so.0.7.2
+# 	rt sys av_free pt
+%define		skip_post_check_so	liblightspark.so.0.7
 
 %description
 Lightspark is a modern, free, open-source flash player implementation.
